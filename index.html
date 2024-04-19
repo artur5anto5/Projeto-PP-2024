@@ -2,20 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
+<body class="AllScreen">
+    <div id="space" class="AllScreen"></div>
+    
+    <main class="AllScreen">
         <h1>FETEGRASIM</h1>
-    </header>
-    <main>
-        <button class="64bit">64BIT</button>
-        <button class="32bit">32BIT</button>
-    </main>
-    <footer>
+
+        <div class="content">
+            <button class="bit">64BIT</button>
+            <button class="bit">32BIT</button>
+        </div>
+
         <h2>Arthur Fetzner e Artur Teixeira</h2>
-    </footer>
+    </main> 
+    
+    <script>
+        function createStars() {
+            const space = document.getElementById('space');
+
+            for (let i = 0; i < 500; i++) {    
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                space.appendChild(star);
+            }
+        }
+
+        createStars();
+    </script>
 </body>
 </html>
